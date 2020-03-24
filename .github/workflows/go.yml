@@ -32,7 +32,6 @@ jobs:
     - name: Publish artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: cake-*
         path: dist
 
 
