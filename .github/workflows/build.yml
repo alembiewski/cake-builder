@@ -30,7 +30,11 @@ jobs:
       run: |
         export PATH=${PATH}:`go env GOPATH`/bin
         go get golang.org/x/tools/cmd/goimports
-        [[ -z "$(goimports -d -l . )" ]] || exit 1
+        output=$(goimports -d -l . )
+        if [[ ! -z "${output}" ]]; then
+          echo ${output}
+          exit 1
+        fi
         
     - name: Run tests
       run: go test -v .
