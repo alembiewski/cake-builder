@@ -32,7 +32,7 @@ jobs:
         go get golang.org/x/tools/cmd/goimports
         output=$(goimports -d -l . )
         if [[ ! -z "${output}" ]]; then
-          echo ${output}
+          echo "${output}"
           exit 1
         fi
         
