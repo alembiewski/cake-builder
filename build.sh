@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 platforms=("linux/amd64" "darwin/amd64")
+dist_dir="dist"
 
 for platform in "${platforms[@]}"
 do
@@ -12,5 +13,5 @@ do
         output_name+='.exe'
     fi
     echo "Building for ${platform}: ${output_name}"
-    GOOS=${GOOS} GOARCH=${GOARCH} go build -o "${output_name}"
+    GOOS=${GOOS} GOARCH=${GOARCH} go build -o $dist_dir/"${output_name}"
 done
