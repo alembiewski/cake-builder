@@ -1,4 +1,4 @@
-name: Basic CI pipeline
+name: Basic CI Workflow
 
 on:
   push:
@@ -29,10 +29,13 @@ jobs:
       run: go test -v .
     - name: Build Go binaries
       run: ./build.sh
-    - name: Publish artifacts
-      uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v1
       with:
-        name: dist
-        path: dist
+        name: cake-darwin-amd64
+        path: dist/cake-darwin-amd64
+    - uses: actions/upload-artifact@v1
+      with:
+        name: cake-linux-amd64
+        path: dist/cake-linux-amd64
 
 
