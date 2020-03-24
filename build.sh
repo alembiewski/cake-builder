@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
+
 platforms=("linux/amd64" "darwin/amd64" "windows")
+dist_dir="dist"
 
 for platform in "${platforms[@]}"
 do
