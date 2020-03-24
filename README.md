@@ -1,3 +1,5 @@
+![Basic CI Workflow](https://github.com/alembiewski/cake-builder/workflows/Basic%20CI%20Workflow/badge.svg)
+
 # Cake Docker Builder
 
 Cake Docker Builder is a tool for managing builds of Docker images organized in hierarchies (layers) in order to
