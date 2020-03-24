@@ -30,7 +30,7 @@ jobs:
       run: |
         export PATH=${PATH}:`go env GOPATH`/bin
         go get golang.org/x/tools/cmd/goimports
-        [[ -z "$(goimports -d -l ./pkg/cake)" ]] || exit 1
+        [[ -z "$(goimports -d -l . )" ]] || exit 1
         
     - name: Run tests
       run: go test -v .
